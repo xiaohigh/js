@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Class Component</title>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+         <script type="text/javascript">
+
+            class Button extends React.Component {
+
+                render() {
+                    return (
+                        <button onClick={()=>this.props.onClickFunction(this.props.incrementValue)}>
+                            +{this.props.incrementValue}
+                        </button>
+                    );
+                };
+            }
+
+            const Result = (props) => {
+                return (
+                    <div>{props.counter}</div>
+                );
+            }
+
+            class App extends React.Component {
+
+                state = { counter: 0 }
+
+                incrementCounter = (incrementValue) => ({
+                    this.setState((prevState) => {
+                    counter: prevState.counter + incrementValue
+                }));
+
+                render {
+                    return (
+                        <div>
+                            <Button incrementValue={1} onClickFunction={this.incrementCounter} />
+                            <Button incrementValue={5} onClickFunction={this.incrementCounter} />
+                            <Button incrementValue={10} onClickFunction={this.incrementCounter} />
+                            <Button incrementValue={100} onClickFunction={this.incrementCounter} />
+                            <Result counter={this.state.counter} />
+                        </div>
+                    );
+                };
+            }
+
+            ReactDOM.render(<App />, mountNode);
+
+        </script>
+    </body>
+</html>
