@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Class Component</title>
-    <script type="text/javascript">
+    <head>
+        <meta charset="UTF-8">
+        <title>Class Component</title>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+         <script type="text/javascript">
 
+            class Button extends React.Component {
 
+                state = { counter: 0 }
 
-    </script>
-</head>
-<body>
+                handleClick = () =>
+                    this.setState({
+                        counter: this.state.counter + 1
+                    });
 
-</body>
+                render() {
+                    return (<button onClick={this.handleClick}>{this.state.counter}</button>);
+                }
+            }
+
+            ReactDOM.render(<Button />, mountNode);
+
+        </script>
+    </body>
 </html>
