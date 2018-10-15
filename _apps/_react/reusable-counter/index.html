@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Reusable Component</title>
+		<style type="text/css">
+
+			@import url('../../global.css');
+			span
+			{
+				font-size: 12px;
+				font-style: italic;
+				letter-spacing: 1px;
+			}
+			#port
+			{
+				position: absolute;
+				top: 45%;
+				right: 0;
+				bottom: 0;
+				left: -20%;
+			}
+			#data
+			{
+				float: right;
+				position: relative;
+				left: -50%;
+			}
+			#msg
+			{
+			    top: -82%;
+			    padding-right: 30px;
+			}
+			button
+			{
+				float: left;
+				position: relative;
+				left: 50%;
+				font-size: 12px;
+				font-weight: bold;
+				padding: 10px 20px;
+				cursor: pointer;
+				color: #666;
+				border: 1px solid #898989;
+				background-color: #c3c3c3;
+				background:
+				-webkit-gradient(linear, 0% 0%, 0% 10%, from(#afafaf), to(#c3c3c3));
+			}
+			button:first-of-type
+			{
+				border-left: 1px solid #898989;
+				border-radius: 10px 0 0 10px;
+			}
+			button:last-of-type
+			{
+				border-right: 1px solid #898989;
+				border-radius: 0 10px 10px 0;
+			}
+			button:first-of-type.active
+			{
+				border-left: 1px solid #458920;
+			}
+			button:last-of-type.active
+			{
+				border-right: 1px solid #458920;
+			}
+			.active
+			{
+				color: #fff;
+				border: 1px solid #458920;
+				background-color: #33f;
+				background:
+				-webkit-gradient(linear, 0% 0%, 0% 100%, from(#66f), to(#33f));
+			}
+
+		</style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/@babel/standalone@7.1.0/babel.min.js"></script>
+         <script type="text/babel">
+
+            class Button extends React.Component {
+              handleClick = () => {
+                this.props.onClickFunction(this.props.incrementValue);
+              };
+
+              render() {
+                return (
+                  <button onClick={this.handleClick}>
+                    +{this.props.incrementValue}
+                  </button>
+                );
+              }
+            }
+
+            const Result = (props) => {
+              return (
+                <div id='msg' style={{width:props.counter}}>{props.counter}</div>
+              );
+            };
+
+            class App extends React.Component {
+              state = { counter: 0 };
+
+              incrementCounter = (incrementValue) => {
+                this.setState((prevState) => ({
+                  counter: prevState.counter + incrementValue
+                }));
+              };
+
+              render() {
+                return (
+                  <div id="port">
+                    <Button incrementValue={1} onClickFunction={this.incrementCounter} />
+                    <Button incrementValue={5} onClickFunction={this.incrementCounter} />
+                    <Button incrementValue={10} onClickFunction={this.incrementCounter} />
+                    <Button incrementValue={100} onClickFunction={this.incrementCounter} />
+                    <Result counter={this.state.counter} />
+                  </div>
+                );
+              }
+            }
+
+            ReactDOM.render(<App />, document.getElementById('root'));
+
+        </script>
+    </body>
+</html>
