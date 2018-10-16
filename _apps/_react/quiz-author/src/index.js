@@ -65,6 +65,7 @@ function onAnswerSelected(answer) {
     const isCorrect = state.turnData.author.books.some((book) => book === answer);
     state.highlight = isCorrect ? 'correct' : 'wrong';
     render();
+    return (state.highlight === 'correct') ? window.location.reload() : '';
 }
 
 function render() {

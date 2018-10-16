@@ -39,8 +39,6 @@ const Turn = ({author, books, highlight, onAnswerSelected}) => {
             </div>);
 }
 
-const Continue = () => { return null }
-
 const Footer = () => {
     return (<div id="footer" className="row">
                 <div className="col-12">
@@ -54,7 +52,6 @@ const AuthorQuiz = ({turnData, highlight, onAnswerSelected}) => {
         <div className="container-fluid">
             <Hero />
             <Turn {...turnData} highlight={highlight} onAnswerSelected={onAnswerSelected} />
-            <Continue />
             <Footer />
         </div>
     );
