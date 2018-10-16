@@ -58,8 +58,7 @@ const getTurnData = (authors) => {
 }
 
 const state = {
-    turnData: getTurnData(authors),
-    highlight: 'correct'
+    turnData: getTurnData(authors)
 }
 
 function onAnswerSelected(answer) {
