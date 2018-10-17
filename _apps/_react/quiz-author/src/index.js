@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AuthorQuiz from './AuthorQuiz';
 import * as serviceWorker from './serviceWorker';
 import {shuffle, sample} from 'underscore';
 
@@ -48,17 +48,18 @@ const getTurnData = (authors) => {
     const allBooks = authors.reduce((p,c,i) => {
         return p.concat(c.books);
     }, []);
-    const fourRandomBooks = shuffle(allBooks).slice(0,4);
-    const answer = sample(fourRandomBooks);
+    const randomBooks = shuffle(allBooks).slice(0,5);
+    const answer = sample(randomBooks);
 
     return {
-        books: fourRandomBooks,
+        books: randomBooks,
         author: authors.find((author) => author.books.some((title) => title === answer))
     }
 }
 
 const state = {
-    turnData: getTurnData(authors)
+    turnData: getTurnData(authors),
+    highlight: 'none'
 }
 
 function onAnswerSelected(answer) {
@@ -69,7 +70,7 @@ function onAnswerSelected(answer) {
 }
 
 function render() {
-    ReactDOM.render(<App {...state} onAnswerSelected={onAnswerSelected} />, document.getElementById('root'));
+    ReactDOM.render(<AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />, document.getElementById('root'));
 }
 render();
 

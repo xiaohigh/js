@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './AuthorQuiz.css';
 import './bootstrap.min.css';
 
 const Hero = () => {
@@ -22,8 +22,8 @@ const Turn = ({author, books, highlight, onAnswerSelected}) => {
     function highlightToBgColor(highlight) {
         const mapping = {
             none: '',
-            correct: 'green',
-            wrong: 'red'
+            correct: '#68ff6d',
+            wrong: '#ffb7b9'
         };
         return mapping[highlight];
     }
@@ -41,8 +41,8 @@ const Turn = ({author, books, highlight, onAnswerSelected}) => {
 
 const Footer = () => {
     return (<div id="footer" className="row">
-                <div className="col-12">
-                    <p className="text-muted credit">All images are from Wikimedia Commons and are in the public domain.</p>
+                <div className="col-10 offset-1">
+                    <p className="text-muted credit">All images are from <a href="https://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are in the public domain.</p>
                 </div>
             </div>);
 }
