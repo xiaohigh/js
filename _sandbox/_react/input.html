@@ -35,20 +35,14 @@
                 handleSubmit = (event) => {
                 event.preventDefault();
                 console.log("Submitted!", this.userNameInput.value)
-              }
-
-                render() {
-                return (
-                    <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        ref={(input) => this.userNameInput = input}
-                        placeholder="Github Username:" required
-                    />
-                    <button type="submit">Add Card</button>
-                  </form>
-                );
-              }
+                }
+                    render() {
+                    return (<form onSubmit={this.handleSubmit}>
+                                <input type="text" ref={(input) => this.userNameInput = input} placeholder="Github Username:" required />
+                                <button type="submit">Add Card</button>
+                            </form>
+                    );
+                }
             }
 
             class App extends React.Component {
