@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './AuthorQuiz.css';
 import './bootstrap.min.css';
@@ -39,6 +40,10 @@ const Turn = ({author, books, highlight, onAnswerSelected}) => {
             </div>);
 }
 
+const Continue = ({show, onContinue}) => {
+    return (<div className="row continue"> {show ? <div className="col-11"><button className="btn btn-primary btn-lg float-right" onClick={onContinue}>Continue</button></div> : null} </div>);
+}
+
 const Footer = () => {
     return (<div id="footer" className="row">
                 <div className="col-10 offset-1">
@@ -47,12 +52,14 @@ const Footer = () => {
             </div>);
 }
 
-const AuthorQuiz = ({turnData, highlight, onAnswerSelected}) => {
+const AuthorQuiz = ({turnData, highlight, onAnswerSelected, onContinue}) => {
     return (
         <div className="container-fluid">
             <Hero />
             <Turn {...turnData} highlight={highlight} onAnswerSelected={onAnswerSelected} />
+            <Continue show={highlight === 'correct'} onContinue={onContinue} />
             <Footer />
+            <p className="add-author"><Link to="/add">Add Author</Link></p>
         </div>
     );
 }
