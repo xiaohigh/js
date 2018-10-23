@@ -4,47 +4,47 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>MVC</title>
 		<script type="text/javascript">
-		
+
 			var Model = {
-				get: function (id) 
+				get: function (id)
 				{
 					return this.data[id];
 				},
-				del: function (id) 
+				del: function (id)
 				{
 					delete this.data[id];
 				},
 				data:
 				{
-					'215': 
-					{ 
-						'name': 'Lookout for it!', 
-						'date': '12-21-2012' 
+					'215':
+					{
+						'name': 'Lookout for it!',
+						'date': '12-21-2012'
 					},
-					'216': 
-					{ 
+					'216':
+					{
 						'name': 'Merry X-Mas',
-						'date': '12-25-2011' 
+						'date': '12-25-2011'
 					},
-					'325': 
-					{ 
+					'325':
+					{
 						'name': 'Happy Halloween',
-						'date': '10-31-2011' 
+						'date': '10-31-2011'
 					},
-					'403': 
-					{ 
+					'403':
+					{
 						'name': 'Happy New Year',
-						'date': '01-01-2012' 
+						'date': '01-01-2012'
 					},
-					'455': 
-					{ 
+					'455':
+					{
 						'name': 'Tax Day Again',
-						'date': '04-15-2012' 
+						'date': '04-15-2012'
 					},
-					'620': 
-					{ 
+					'620':
+					{
 						'name': 'Whoo 4th of July!',
-						'date': '07-04-2012' 
+						'date': '07-04-2012'
 					}
 				},
 				meta:
@@ -70,7 +70,7 @@
 					}
 				}
 			}
-			
+
 			var View = {
 				data: function(data)
 				{
@@ -134,7 +134,7 @@
 					if (el.addEventListener)
 					{
 						el.addEventListener(type,func,false);
-					} 
+					}
 					else if (el.attachEvent)
 					{
 						el.attachEvent('on'+type,func);
@@ -178,56 +178,56 @@
 					}
 				}
 			}
-			
+
 			window.onload = function()
 			{
 				Controller.init('port');
 			}
-			
+
 		</script>
 		<style type="text/css">
-		
-			@import url('../global.css');
 
-			ul 
-			{ 
-				width: 500px; 
-				margin: 40px auto; 
-				list-style: none; 
-				background-color: #fff; 
-				box-shadow: 0 0 15px #757575; 
+			@import url('../../../css/_sandbox/sass/global.css');
+
+			ul
+			{
+				width: 500px;
+				margin: 40px auto;
+				list-style: none;
+				background-color: #fff;
+				box-shadow: 0 0 15px #757575;
 			}
-			li 
-			{ 
-				font-size: 15px; 
-				font-weight: bold; 
-				text-align: left; 
-				padding: 10px; 
-				cursor: pointer; 
+			li
+			{
+				font-size: 15px;
+				font-weight: bold;
+				text-align: left;
+				padding: 10px;
+				cursor: pointer;
 			}
-			span 
-			{ 
-				font-size: 12px; 
-				font-style: italic; 
-				letter-spacing: 1px; 
+			span
+			{
+				font-size: 12px;
+				font-style: italic;
+				letter-spacing: 1px;
 			}
-			button 
-			{ 
-				text-align: center; 
-				margin: 0 auto; 
-				padding: 5px 8px; 
-				cursor: pointer; 
-				font-weight: bold; 
-				color: #fff; 
-				background-color: #ce0000; 
-				box-shadow: 0 0 7px #757575; 
-				border-radius: 9px; 
+			button
+			{
+				text-align: center;
+				margin: 0 auto;
+				padding: 5px 8px;
+				cursor: pointer;
+				font-weight: bold;
+				color: #fff;
+				background-color: #ce0000;
+				box-shadow: 0 0 7px #757575;
+				border-radius: 9px;
 			}
-			.active 
-			{ 
-				background-color: #e1e1e1; 
+			.active
+			{
+				background-color: #e1e1e1;
 			}
-		
+
 		</style>
 	</head>
 	<body>
