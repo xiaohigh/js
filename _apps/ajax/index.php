@@ -6,17 +6,17 @@
 		<script type="text/javascript">
 
 			var Model = {
-				get: function (id) 
+				get: function (id)
 				{
 					return this.data[id];
 				},
-				del: function (id) 
+				del: function (id)
 				{
 					delete this.data[id];
 				},
 				data:
 				{
-					'1': 
+					'1':
 					{
 						'file': 'xhr.txt',
 						'text': '200'
@@ -48,7 +48,7 @@
 					}
 				}
 			}
-		
+
 			var View = {
 				data: function(data)
 				{
@@ -67,7 +67,7 @@
 						document.getElementById(port).appendChild(el);
 				}
 			}
-		
+
 			var Controller = {
 				init: function(id)
 				{
@@ -105,7 +105,7 @@
 					if (el.addEventListener)
 					{
 						el.addEventListener(type,func,false);
-					} 
+					}
 					else if (el.attachEvent)
 					{
 						el.attachEvent('on'+type,func);
@@ -127,14 +127,14 @@
 								for (var i = 0; i < d.length; i ++)
 								{
 									if (d[i].className === 'active')
-									{	
+									{
 										d[i].className = '';
 									}
 								}
 								if (el.className !== 'active')
 									el.className = 'active';
 								else
-									el.className = ''; 
+									el.className = '';
 							}
 						break;
 					}
@@ -145,11 +145,11 @@
 			{
 				Controller.init('port');
 			}
-			
+
 		</script>
 		<style type="text/css">
-		
-			@import url('../global.css');
+
+			@import url('../../../css/_sandbox/_sass/global.css');
 
 		</style>
 	</head>
