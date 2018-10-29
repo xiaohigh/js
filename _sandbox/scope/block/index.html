@@ -16,9 +16,9 @@
 			let scope = 'window';
 
 			example.foo = () => {
-				let scope = 'example';
+				let scope = 'function';
 				if(true) {
-					scope = 'block';
+					let scope = 'block';
 				}
 				return scope;
 			};
