@@ -13,12 +13,12 @@
 				if(args.msg) document.getElementById('viewport').innerHTML = args.msg;
 			};
 
-			const scope = 'global';
+			let scope = 'window';
 
 			example.foo = () => {
-				const scope = 'local';
+				let scope = 'example';
 				if(true) {
-					let scope = 'block';
+					scope = 'block';
 				}
 				return scope;
 			};
