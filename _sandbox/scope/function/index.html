@@ -14,14 +14,12 @@
 				if(args.msg) document.getElementById('viewport').innerHTML = args.msg;
 			};
 
-			var scope = 'global';
-
 			example.foo = function()
 			{
-				var scope = 'local';
+				var scope;
 				if(true)
 				{
-					var scope = 'function';
+					scope = 'function';
 				}
 				return scope;
 			};
