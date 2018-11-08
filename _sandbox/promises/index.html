@@ -15,7 +15,7 @@
 
 			example.process = () => 
 			{
-				fetch('example.json')
+				fetch('example.json', { mode: 'no-cors' })
 				.then(response => response.json())
 				.then(promise => example.message({ msg:JSON.stringify(promise), log:promise.foo }))
 				.catch(error => console.log('=(:', error));
