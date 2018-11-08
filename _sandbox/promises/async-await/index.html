@@ -10,7 +10,7 @@
 
 			example.message = (args) => {
 				if(args.log) console.log(args.log);
-				if(args.msg) document.getElementById('viewport').innerHTML = args.msg;
+				if(args.msg) document.getElementById('viewport').innerHTML = `<h1>${args.msg}</h1>`;
 			};
 
 			example.process = () => 
@@ -18,7 +18,7 @@
 				(async function read(){
 					const data = await fetch('example.json');
 					let promise = await data.json();
-					example.message({ msg:JSON.stringify(promise), log:promise.foo });
+					example.message({ msg:promise.foo, log:promise.bar });
 				})();
 			};
 
