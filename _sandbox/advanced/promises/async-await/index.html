@@ -16,9 +16,14 @@
 			example.process = () => 
 			{
 				(async function read(){
-					const data = await fetch('example.json');
-					let promise = await data.json();
-					example.message({ msg:promise.foo, log:promise.bar });
+					const file = await fetch('example.json');
+					const repos = await fetch('https://api.github.com/repositories?since=0');
+
+					let promise1 = await file.json();
+					example.message({ msg:promise1.foo, log:promise1.bar });
+
+					let promise2 = await repos.json();
+					example.message({ msg:(promise2[3].name + ' ' + promise1.foo), log:(promise2[3].name + ' ' + promise1.foo) });
 				})();
 			};
 
