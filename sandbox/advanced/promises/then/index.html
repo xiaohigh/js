@@ -13,8 +13,7 @@
 				if(args.msg) document.getElementById('viewport').innerHTML = args.msg;
 			};
 
-			example.process = () => 
-			{
+			example.process = () => {
 				fetch('example.json', { mode: 'no-cors' })
 				.then(response => response.json())
 				.then(promise => example.message({ msg:JSON.stringify(promise), log:promise.foo }))
