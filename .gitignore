@@ -46,3 +46,4 @@ Thumbs.db
 .idea
 *sublime-workspace
 .c9revisions
+node_modules
