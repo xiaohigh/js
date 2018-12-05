@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Syntax Highlighting</title>
+		<style type="text/css">
+
+			.function {
+				font-style: italic;
+				color: blue;
+			}
+
+			.condition {
+				color: green;
+			}
+
+			.parenthesis {
+				color: purple;
+			}
+
+			.handlebar {
+				color: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="viewport"></div>
+	</body>
+	<script>
+
+		let str = 'function () { if () {} else {} }';
+
+		let res = str.replace(/function/g, '<span class="function">function</span>');
+			res = res.replace(/if/g, '<span class="condition">if</span>');
+			res = res.replace(/else/g, '<span class="condition">else</span>');
+			res = res.replace(/\(/g, '<span class="parenthesis">(</span>');
+			res = res.replace(/\)/g, '<span class="parenthesis">)</span>');
+			res = res.replace(/{/g, '<span class="handlebar">{</span>');
+			res = res.replace(/}/g, '<span class="handlebar">}</span>');
+
+		document.getElementById('viewport').innerHTML = res;
+		
+	</script>
+</html>
