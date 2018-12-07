@@ -149,7 +149,7 @@
 		</script>
 		<style type="text/css">
 
-			@import url('../../../css/_sandbox/_sass/global.css');
+			@import url('../../../css/sandbox/_sass/global.css');
 
 		</style>
 	</head>
